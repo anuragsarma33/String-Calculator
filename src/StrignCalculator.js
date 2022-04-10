@@ -6,10 +6,12 @@ class StringCalculator {
     } else if (this.number.length === 1) {
       return parseInt(this.number, 10);
     } else {
-      this.num1 = this.number.split(",")[0];
-      this.num2 = this.number.split(",")[1];
-      this.sum = parseInt(this.num1, 10) + parseInt(this.num2, 10);
-      return this.sum;
+      this.result = this.number.split(",");
+      let total = 0;
+      for (let i = 0; i < this.result.length; i++) {
+        total = total + parseInt(this.result[i], 10);
+      }
+      return total;
     }
   }
 }

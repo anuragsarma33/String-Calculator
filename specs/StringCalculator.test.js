@@ -17,4 +17,14 @@ describe("String Calculator", () => {
   it("should return the sum of the numbers if two numbers are given", () => {
     expect(calculator.add("1,2")).toEqual(3);
   });
+  //handle unknown amount of numbers
+  it("should return the sum of an unknown amount of numbers", () => {
+    const randomArray = (length, max) =>
+      [...new Array(length)].map(() => Math.round(Math.random() * max));
+    const randomNumber = Math.floor(Math.random() * 100 + 1);
+    const result = randomArray(randomNumber, randomNumber);
+    const sum = result.reduce((pv, cv) => pv + cv, 0);
+    const arg = result.join();
+    expect(calculator.add(arg)).toEqual(sum);
+  });
 });
