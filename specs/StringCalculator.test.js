@@ -35,4 +35,15 @@ describe("String Calculator", () => {
   it("should allow \\n in between the input number string", () => {
     expect(calculator.add("1\n2,3")).toEqual(6);
   });
+
+  //handle negative numbers
+  it("should not allow negative numbers", () => {
+    expect(() => {
+      calculator.add("-41,50");
+    }).toThrow("negatives not allowed");
+
+    expect(() => {
+      calculator.add("-41,50,-20,-30");
+    }).toThrow("negatives not allowed");
+  });
 });
