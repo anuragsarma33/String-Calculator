@@ -1,12 +1,13 @@
 class StringCalculator {
   add(stringNumbers) {
     this.number = stringNumbers;
-    if (this.number === "") {
+    this.numbers = this.number.replace(/(\r\n|\n|\r)/gm, ",");
+    if (this.numbers === "") {
       return 0;
-    } else if (this.number.length === 1) {
-      return parseInt(this.number, 10);
+    } else if (this.numbers.length === 1) {
+      return parseInt(this.numbers, 10);
     } else {
-      this.result = this.number.split(",");
+      this.result = this.numbers.split(",");
       let total = 0;
       for (let i = 0; i < this.result.length; i++) {
         total = total + parseInt(this.result[i], 10);
