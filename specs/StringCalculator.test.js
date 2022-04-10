@@ -1,4 +1,4 @@
-const StringCalculator = require("../src/StrignCalculator");
+const StringCalculator = require("../src/StringCalculator");
 
 describe("String Calculator", () => {
   let calculator;
@@ -36,7 +36,7 @@ describe("String Calculator", () => {
     expect(calculator.add("1\n2,3")).toEqual(6);
   });
 
-  //handle negative numbers
+  //handle negative numbers scenario
   it("should not allow negative numbers", () => {
     expect(() => {
       calculator.add("-41,50");
